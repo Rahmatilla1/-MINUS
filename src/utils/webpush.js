@@ -1,7 +1,8 @@
 const webpush = require("web-push");
+require("dotenv").config(); // .env fayldan o‘qish uchun
 
-const publicVapidKey = "BD5ekKbZpFMXQzeUgwYJ1WL95Y9mZLTODnfIinOlDaKmHvaaBFA6wg7biqIUwj4oezXtIPmHvPoSilkKuaZtM1o";
-const privateVapidKey = "tiB--pxBENJy5pl3AJVihaWTCvJFPJasBmWq-3fYBNE";
+const publicVapidKey = process.env.VAPID_PUBLIC;
+const privateVapidKey = process.env.VAPID_PRIVATE;
 
 webpush.setVapidDetails(
   "mailto:you@example.com",
